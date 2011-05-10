@@ -6,3 +6,4 @@ log/*.log
 tmp/*
 _FOSSIL_
 db/development.sqlite3
+log/development.log
