@@ -1,13 +1,25 @@
-* make caseload savable in db..
+
+* check if all 15 minutes in 5/11 are all in groups
+* check if all in groups are in 15 minutes
+* check if 5/10 and 5/11 have the same residents + more on 5/11
+
+coding:
+* show_by_therapist should only show active
+* update residents, set inactive to active-false
+
+* figure out the algo for groups lookback period... 
 * group creation...
+* an easier way to edit sessions
+* make caseload savable in db..
 
 * work on calculating groups (by day depending on insurance)
   - should be able to base decisions on MDS
+* copy a rehab day to the next or from another rehab day
+
+---- later ----
 * transfer all 'views/session/new.rhtml' form elements to views/session/_form.rhtml
   . check via new and 'edit' actions
 
-* copy a rehab day to the next or from another rehab day
-* an easier way to edit sessions
 
 =====================================================================================
 D Remember: work on dev_barn, deployed is ~/barn (dev_barn at home and barn for work and data)
