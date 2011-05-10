@@ -2,6 +2,9 @@
 
   $ autoest -rails
 
+> open three terminal tabs
+  ~/dev_barn, ~/barn, midnight-runner
+
 > to develop go to ~/dev_barn:
     . git commit, fossil commit
   then go to ~/barn
