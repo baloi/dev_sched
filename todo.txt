@@ -1,8 +1,8 @@
-Remember: work on dev_barn, deployed is ~/barn (dev_barn at home and barn for work and data)
-- change implementation from ~/dev_barn and change data from ~/barn
-* decide on fossil or git, how about pomodoro?
-* make dev_barn a fossil copy 
+* make caseload savable in db..
+* group creation...
 
+* work on calculating groups (by day depending on insurance)
+  - should be able to base decisions on MDS
 * transfer all 'views/session/new.rhtml' form elements to views/session/_form.rhtml
   . check via new and 'edit' actions
 
@@ -10,6 +10,11 @@ Remember: work on dev_barn, deployed is ~/barn (dev_barn at home and barn for wo
 * an easier way to edit sessions
 
 =====================================================================================
+D Remember: work on dev_barn, deployed is ~/barn (dev_barn at home and barn for work and data)
+D change implementation from ~/dev_barn and change data from ~/barn
+D decide on fossil or git, how about pomodoro?
+D make dev_barn a fossil copy 
+
 D make fossil repo/dir for project for purposes of easy reversions
   Sun May  8 01:47:09 EDT 2011  
 
