@@ -2,5 +2,5 @@
 
   $ autoest -rails
 
-> to develop go to ~/dev_sched
-  to use go to barn
+> to develop go to ~/dev_barn
+  to use go to ~/barn
