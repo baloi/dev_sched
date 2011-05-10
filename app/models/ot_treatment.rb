@@ -1,0 +1,2 @@
+class OTTreatment < Treatment 
+end

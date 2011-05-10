@@ -1,0 +1,2 @@
+class PTSchedule < Schedule
+end

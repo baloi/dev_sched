@@ -1,0 +1,12 @@
+<!-- Make a div for this resident -->
+
+<% for column in Resident.content_columns %>
+
+<p>
+  <b><%= column.human_name %>:</b>  <div id='resident_<%= @resident.id %>_<%= column.name %>'><%=h @resident.send(column.name) %></div>
+</p>
+<% end %>
+
+<%= link_to 'Edit', :action => 'edit', :id => @resident %> |
+<%= link_to 'Back', :action => 'list' %>
+

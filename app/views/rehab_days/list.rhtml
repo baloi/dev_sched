@@ -1,0 +1,27 @@
+<h1>Listing rehab_days</h1>
+
+<table>
+  <tr>
+  <% for column in RehabDay.content_columns %>
+    <th><%= column.human_name %></th>
+  <% end %>
+  </tr>
+  
+<% for rehab_day in @rehab_days %>
+  <tr>
+  <% for column in RehabDay.content_columns %>
+    <td><%=h rehab_day.send(column.name) %></td>
+  <% end %>
+    <td><%= link_to 'Show', :action => 'show', :id => rehab_day %></td>
+    <td><%= link_to 'Edit', :action => 'edit', :id => rehab_day %></td>
+    <td><%= link_to 'Destroy', { :action => 'destroy', :id => rehab_day }, :confirm => 'Are you sure?', :method => :post %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to 'Previous page', { :page => @rehab_day_pages.current.previous } if @rehab_day_pages.current.previous %>
+<%= link_to 'Next page', { :page => @rehab_day_pages.current.next } if @rehab_day_pages.current.next %> 
+
+<br />
+
+<%= link_to 'New rehab_day', :action => 'new' %>

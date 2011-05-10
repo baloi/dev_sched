@@ -1,0 +1,2 @@
+class OTSchedule < Schedule
+end

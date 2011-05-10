@@ -1,0 +1,18 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+one:
+  id:   1
+  name: Tobo, Dado 
+two:
+  id: 2
+  name: Tatoy, Totoy
+first:
+  id: 3
+  name: Toboy, Botoy
+  pt_minutes_per_day: 60
+  ot_minutes_per_day: 70
+  pt_days_per_week: 5
+  ot_days_per_week: 5
+  active: true
+  room: 508 
+  eval_date: <%= Time.mktime(2011, 1, 14, 8, 30) %>
+  insurance: MedA

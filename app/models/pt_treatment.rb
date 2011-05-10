@@ -1,0 +1,2 @@
+class PTTreatment < Treatment 
+end

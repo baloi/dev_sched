@@ -1,0 +1,37 @@
+<%= error_messages_for 'resident' %>
+
+<!--[form:resident]-->
+<p><label for="resident_name">Name</label><br/>
+<%= text_field 'resident', 'name'  %></p>
+
+<p><label for="resident_eval_date">Eval Date</label><br/>
+<%= date_select 'resident', 'eval_date', :start_year => 1995, :use_month_numbers => true %></p>
+
+<p><label for="resident_pt_minutes_per_day">Pt minutes per day</label><br/>
+<%= text_field 'resident', 'pt_minutes_per_day'  %></p>
+
+<p><label for="resident_ot_minutes_per_day">Ot minutes per day</label><br/>
+<%= text_field 'resident', 'ot_minutes_per_day'  %></p>
+
+<p><label for="resident_pt_days_per_week">Pt days per week</label><br/>
+<%= text_field 'resident', 'pt_days_per_week'  %></p>
+
+<p><label for="resident_ot_days_per_week">Ot days per week</label><br/>
+<%= text_field 'resident', 'ot_days_per_week'  %></p>
+
+<p><label for="resident_active">Active</label><br/>
+<select id="resident_active" name="resident[active]"><option value="false">False</option><option value="true" selected>True</option></select></p>
+
+<p><label for="resident_room">Room</label><br/>
+<%= text_field 'resident', 'room'  %></p>
+
+<p><label for="resident_insurance">Insurance</label><br/>
+  <%= resident_insurace_select %>
+<!-- %= text_field 'resident', 'insurance'  %></p-->
+</p>
+
+<p><label for="resident_physical_therapist_id">Physical Therapist</label><br/>
+  <%= select 'resident', 'physical_therapist_id', @therapists  %></p>
+
+<!--[eoform:resident]-->
+

@@ -1,0 +1,2 @@
+module RehabDaysHelper
+end

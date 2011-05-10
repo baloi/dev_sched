@@ -1,0 +1,2 @@
+class ResidentSessionsController < ApplicationController
+end

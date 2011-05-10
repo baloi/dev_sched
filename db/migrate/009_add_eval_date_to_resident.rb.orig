@@ -1,0 +1,9 @@
+class AddEvalDateToResident < ActiveRecord::Migration
+  def self.up
+    add_column :residents, :eval_date, :timestamp
+  end
+
+  def self.down
+    remove_column :residents, :eval_date
+  end
+end

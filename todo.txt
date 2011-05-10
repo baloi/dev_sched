@@ -1,0 +1,170 @@
+Remember: work on dev_barn, deployed is ~/barn (dev_barn at home and barn for work and data)
+- change implementation from ~/dev_barn and change data from ~/barn
+* decide on fossil or git, how about pomodoro?
+* make dev_barn a fossil copy 
+
+* transfer all 'views/session/new.rhtml' form elements to views/session/_form.rhtml
+  . check via new and 'edit' actions
+
+* copy a rehab day to the next or from another rehab day
+* an easier way to edit sessions
+
+=====================================================================================
+D make fossil repo/dir for project for purposes of easy reversions
+  Sun May  8 01:47:09 EDT 2011  
+
+D make test for resident.physical_therapist/occupational_therapist
+  - rake db:migrate
+  - Resident belongs_to: physical_therapist
+  - Resident belongs_to: occupational_therapist
+  - PhysicalTherapist has_many residents     --
+                                                >>> Can these two be joined?
+  - OccupationalTherapist has_many residents --
+
+
+
+D How do we destroy a therapist from Resident.therapists??
+  D 1. copy therapist_id from TherapistResidents to Resident.pt
+     - loop through therapist_residents
+       resident = Resident.find(therapist_resident.resident_id)
+       resident.pt = therapist_resident.therapist_id
+  D 2. check data all residents to pt(id) to therapist_resident.therapist_id
+  3. delete therapist_residents table
+  4. set associations: 
+     Resident WILL NOT have therapists... (only pt or ot)
+     Resident belongs to physical_therapist
+     Resident belongs to occupational_therapist
+     PhysicalTherapist has_many residents
+     OccupationalTherapist has_many residents
+  >>>> MAKE TESTS FOR EVERY STEP 
+* Resident.edit should show actual therapist and edit it also
+
+
+D show the actual current insurance in resident/edit.rhtml ..
+D finish hwang play-by-play screencast
+D(Sun May  1 00:59:18 EDT 2011) display residents by therapist..
+N Session#has_conflict/overlaps
+L Test session conflicts
+  . conflicts by resident
+  . conflicts by therapist
+L Highlight conflicts
+
+L make Capybara work on your old rails
+L Caseload#to_html
+L Faster entry of sessions/group
+L Display groups only
+L Display only caseloads without groups
+
+
+D(Wed Apr 27 20:11:24 EDT 2011) new resident should have a therapist, try ResidentTherapist approach* enter all residents
+D (Tue Apr 26 18:37:57 EDT 2011) clean up database
+D (Mon Apr 25 20:05:28 EDT 2011) Add eval_date to resident model 
+D (Mon Apr 25 20:05:00 EDT 2011) Enter first-lastname, insurance type
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+> Caseload
+  . create_time_entries
+      [time, [residents]]
+  . groups should be separated from regular sessions in display -like word/excel
+  . in session for the day all therapists list each time slot should have only
+    one resident
+  . group list should be for a whole week and highlighted
+  DONE. find_by_day_and_therapist
+  DONE. initialize
+> work on displaying
+  = all therapists for the day..
+    . align sessions(resident) by therapist to time start (as x,y coordinates)
+    . highlight conflicts
+    . a resident should be able to have more than one session per day
+      meaning it should pass validations
+  = later:
+    . list all residents with no schedule or lacking schedule...
+> use /Users/baloi/ruby_rails/projects/rr10-team-2/users_controller.rb and 
+  application_controller code from authentication
+  - from model Recipe::can_edit?(user)  
+
+  def can_edit(user)
+    user.admin? || self.user == user
+  end
+
+  - from recipes_controller line 49:
+  protected
+  helper_method :recipe
+
+  - from application_controller
+    protected
+    signed_in?, current_user, admin?, login_required
+
+    helper_method :signed_in?, :current_user, :admin?
+=====================
+DONE:
+
+Sun Apr 10 16:07:38 EDT 2011
+> work on groups.... (tests, create, edit, destroy, and add_resident) 
+> session/new - should be able to add resident in a session
+  - should redirect to somewhere or have add resident button on
+    session/new page
+
+Sat Apr 9 16:08:20 EDT 2011
+> Therapist name should not be null
+> test resident having PT/OT treatment and PT/OT group (adding and finding
+   residents in the sessions....
+> fix localhost:3000/session/new page
+  - make select for rehab_days
+  MAKE a test: (functional?) -- ruby test/functional/session_controller_test.rb
+  - add type(treatment/group) selection
+    and in controller manipulate and save the 
+    proper models
+  - add therapist selection
+  - add resident selection
+
+
+Fri Mar 25 12:41:01 EDT 2011
+> fix adding therapists to include type (PT, OT)
+> add therapist selection in session/new
+> add therapist in session/list
+> add therapist in session/show
+
+>DONE 3/15@10:30PM Find a way to extract data from html elements searched by assert_select(element#id)
+> DONE 3/14@11:45)extract data from html elements
+>>DONE(3/12) start labeling <td> in list or repsonse pages to be able to search data(scrape) data from a page easier during testing
+> consolidate pt_treatment in test/unit/session_test.rb creation 
+  as a single method call or fixture
+
+models to migrate
+> resident
+> therapist
+
+> session
+> schedule
+> rehab_day
+
+connectors:
+> TherapistResident
+   belongs_to :therapist
+   belongs_to :resident
+
+> ResidentSession
+  belongs_to :resident
+  belongs_to :session
+
+"aggregations":
+> Treatment < Session
+> PT/OT[Treatment] < Treatment
+> Group < Session
+> PT/OT[Group]
+

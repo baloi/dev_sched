@@ -1,0 +1,17 @@
+<h1>New therapist</h1>
+
+<% form_tag :action => 'create' do %>
+  <%= render :partial => 'form' %>
+
+<p><label for="therapist_type">Type</label><br/>
+<!--%= select 'therapist', 'type', @professions  %></p-->
+<select id='therapist_type', name='therapist[type]'>
+  <option value="PhysicalTherapist">PT</option>
+  <option value="OccupationalTherapist">OT</option>
+</select>
+</p>
+
+  <%= submit_tag "Create" %>
+<% end %>
+
+<%= link_to 'Back', :action => 'list' %>

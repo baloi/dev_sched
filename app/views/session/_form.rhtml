@@ -1,0 +1,14 @@
+<%= error_messages_for 'session' %>
+
+<!--[form:session]-->
+<p><label for="session_time_start">Time start</label><br/>
+<%= datetime_select 'session', 'time_start', {:minute_step => 15} %></p>
+
+<p><label for="session_time_end">Time end</label><br/>
+<%= datetime_select 'session', 'time_end', {:minute_step => 15} %></p>
+
+<p><label for="session_description">Description</label><br/>
+<%= text_field 'session', 'description'  %></p>
+
+<!--[eoform:session]-->
+

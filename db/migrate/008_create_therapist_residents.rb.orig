@@ -1,0 +1,12 @@
+class CreateTherapistResidents < ActiveRecord::Migration
+  def self.up
+    create_table :therapist_residents do |t|
+      t.column :therapist_id, :integer
+      t.column :resident_id, :integer
+    end
+  end
+
+  def self.down
+    drop_table :therapist_residents
+  end
+end

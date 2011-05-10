@@ -1,0 +1,41 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+first:
+  id: 3
+  time_start: Sat Mar 14 9:45:00 -0400 2011
+  time_end: Sat Mar 14 10:40:00 -0400 2011
+  rehab_day_id: 1 
+  therapist_id: 1
+  description: first session
+  type: PTTreatment
+one:
+  id: 1
+  time_start: Sat Mar 14 15:45:00 -0400 2011
+  time_end: Sat Mar 14 16:40:00 -0400 2011
+  rehab_day_id: 1 
+  therapist_id: 1
+  description: one session
+  type: PTTreatment
+two:
+  id: 2
+  time_start: Sat Mar 14 13:45:00 -0400 2011
+  time_end: Sat Mar 14 14:40:00 -0400 2011
+  rehab_day_id: 1 
+  therapist_id: 1
+  description: two session
+  type: PTTreatment
+simple_session: 
+  id: 4
+  time_start: <%= Time.mktime(2011, 3, 14, 8, 30) %>
+  time_end: <%= Time.mktime(2011, 3, 14, 9, 30) %>
+  description: simple session
+  rehab_day_id: 1 
+  therapist_id: 1
+  type: PTTreatment
+first_group: 
+  id: 5
+  time_start: <%= Time.mktime(2011, 3, 14, 8, 30) %>
+  time_end: <%= Time.mktime(2011, 3, 14, 9, 30) %>
+  description: PTGroup
+  rehab_day_id: 1 
+  therapist_id: 1
+  type: PTGroup

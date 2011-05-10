@@ -1,0 +1,29 @@
+<h1>Listing therapists</h1>
+
+<table>
+  <tr>
+  <% for column in Therapist.content_columns %>
+    <th><%= column.human_name %></th>
+  <% end %>
+    <th>Type</th>
+  </tr>
+  
+<% for therapist in @therapists %>
+  <tr>
+  <% for column in Therapist.content_columns %>
+    <td><%=h therapist.send(column.name) %></td>
+  <% end %>
+    <td><%= therapist.type %></td>
+    <td><%= link_to 'Show', :action => 'show', :id => therapist %></td>
+    <td><%= link_to 'Edit', :action => 'edit', :id => therapist %></td>
+    <td><%= link_to 'Destroy', { :action => 'destroy', :id => therapist }, :confirm => 'Are you sure?', :method => :post %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to 'Previous page', { :page => @therapist_pages.current.previous } if @therapist_pages.current.previous %>
+<%= link_to 'Next page', { :page => @therapist_pages.current.next } if @therapist_pages.current.next %> 
+
+<br />
+
+<%= link_to 'New therapist', :action => 'new' %>

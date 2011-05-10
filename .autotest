@@ -1,0 +1,21 @@
+require 'redgreen/autotest'
+require "autotest/restart"
+require "autotest/fsevent"
+#require "autotest/inotify"
+
+Autotest.add_hook(:initialize) {|at|
+  #at.add_exception %r{^\.git} # ignore version control system
+  #at.add_exception %r{^\.svn} # ignore version control system
+  #at.add_exception %r{^\.tmp} # ignore temp files 
+  #at.add_exception %r{^\.swp} # ignore swap files 
+  %w{.git .svn .swp .hg .DS_STORE ._* .rspec .txt .ru vendor tmp log doc}.each do |exception|
+    at.add_exception(exception)
+  end
+
+  #at.clear_mappings
+  #at.add_mapping(%r{^lib/.*\.rb$}) {|f, _|
+  #at.add_mapping(%r{.*\.rb$}) {|f, _|
+  #  Dir['spec/**/*.rb']
+  #}
+  nil
+}

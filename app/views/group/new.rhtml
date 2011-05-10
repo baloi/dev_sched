@@ -1,0 +1,22 @@
+<h1>New group</h1>
+
+<% form_tag :action => 'create' do %>
+  <!-- baloi start -->
+ <!-- baloi end   -->
+  <%= render :partial => 'form' %>
+
+<p><label for="group_therapist_id">Therapist</label><br/>
+<%= select 'group', 'therapist_id', @therapists  %></p>
+
+
+<p><label for="group_type">Type</label><br/>
+<select id="group_type" name="group[type]">
+  <option value="PTGroup">PT Group</option>
+  <option value="OTGroup">OT Group</option>
+</select>
+</p>
+
+  <%= submit_tag "Create" %>
+<% end %>
+
+<%= link_to 'Back', :action => 'list' %>

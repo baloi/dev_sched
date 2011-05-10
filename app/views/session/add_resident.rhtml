@@ -1,0 +1,16 @@
+<% for column in Session.content_columns %>
+<p>
+  <b><%= column.human_name %>:</b> <%=h @_session.send(column.name) %>
+</p>
+<% end %>
+
+
+<% form_tag :action => 'add_resident', :id => @_session.id, :method => :post do %>
+
+  <p><label for="resident_id">Resident</label><br/>
+  <%= select 'resident', 'id', @residents  %></p>
+
+  <%= submit_tag 'Add Resident' %>
+<% end %>
+
+

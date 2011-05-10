@@ -1,0 +1,37 @@
+<h1>Listing residents by primary therapist</h1>
+
+
+<%= link_to 'resident list', :action => 'list' %>
+<br />
+<br />
+
+<table border="1">
+  <tr>
+      <% @therapists.each do |therapist| %>
+        <td>
+          <table border="1">
+            <tr>
+              <th>
+                <b><%= therapist.name %></b>
+              </th>
+            </tr>
+            <% therapist.residents.each do |resident| %>
+            <tr> 
+              <td>
+                <table bgcolor="<%= insurance_color(resident)%>">
+                  <tr>
+                    <td><%= resident.last_name %>   </td>
+                    <td align="right"><%= resident.pt_days_per_week %> x <%= resident.pt_minutes_per_day %></td>
+                  </tr>
+                  <tr>
+                    <td align="left"> <i><%= resident.insurance %></i></td>
+                  </tr>
+                </table>
+              </td>
+            </tr> 
+            <% end %>
+          </table>
+        </td>
+      <% end %>
+  </tr>
+</table>

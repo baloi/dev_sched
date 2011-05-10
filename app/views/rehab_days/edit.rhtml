@@ -1,0 +1,9 @@
+<h1>Editing rehab_day</h1>
+
+<% form_tag :action => 'update', :id => @rehab_day do %>
+  <%= render :partial => 'form' %>
+  <%= submit_tag 'Edit' %>
+<% end %>
+
+<%= link_to 'Show', :action => 'show', :id => @rehab_day %> |
+<%= link_to 'Back', :action => 'list' %>

@@ -1,0 +1,13 @@
+class DeleteTherapistResident < ActiveRecord::Migration
+  def self.up
+    drop_table :therapist_residents 
+  end
+
+  def self.down
+    create_table :therapist_residents do |t|
+      t.column :therapist_id, :integer
+      t.column :resident_id, :integer
+    end
+
+  end
+end

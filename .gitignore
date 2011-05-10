@@ -1,0 +1,6 @@
+*~
+*swp
+
+*.log
+log/*.log
+tmp/*

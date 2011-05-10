@@ -1,0 +1,31 @@
+<h1>Listing residents</h1>
+ 
+<%= link_to 'show residents by therapist', :action => 'show_by_therapist' %>
+<br />
+<br />
+
+<table>
+  <tr>
+  <% for column in Resident.content_columns %>
+    <th><%= column.human_name %></th>
+  <% end %>
+  </tr>
+ 
+<% for resident in @residents %>
+  <tr>
+  <% for column in Resident.content_columns %>
+    <!-- Baloi, add something here to identify the field inside "td" -->
+    <td id='resident_<%= resident.id %>_<%= column.name %>'><%=h resident.send(column.name) %></td>
+  <% end %>
+    <td><%= link_to 'Show', :action => 'show', :id => resident %></td>
+    <td><%= link_to 'Edit', :action => 'edit', :id => resident %></td>
+    <td><%= link_to 'Destroy', { :action => 'destroy', :id => resident }, :confirm => 'Are you sure?', :method => :post %></td>
+  </tr>
+<% end %>
+</table>
+
+<!--%= link_to 'Previous page', { :page => @resident_pages.current.previous } if @resident_pages.current.previous %-->
+<!--%= link_to 'Next page', { :page => @resident_pages.current.next } if @resident_pages.current.next %-->
+<br />
+
+<%= link_to 'New resident', :action => 'new' %>

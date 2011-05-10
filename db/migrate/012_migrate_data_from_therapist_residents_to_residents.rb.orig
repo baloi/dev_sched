@@ -1,0 +1,13 @@
+class MigrateDataFromTherapistResidentsToResidents < ActiveRecord::Migration
+  def self.up
+    therapist_residents = TherapistResident.find(:all)
+      therapist_residents.each do |therapist_resident|
+      resident = Resident.find(therapist_resident.resident_id)
+      resident.physical_therapist_id = therapist_resident.therapist_id
+    end
+  end
+
+  def self.down
+  end
+end
+

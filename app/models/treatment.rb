@@ -1,0 +1,2 @@
+class Treatment < Session 
+end

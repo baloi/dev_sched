@@ -1,0 +1,2 @@
+class OTGroup < Group 
+end

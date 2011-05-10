@@ -1,0 +1,24 @@
+<h1>Listing residents</h1>
+ 
+<%= link_to 'resident list', :action => 'list' %>
+<br />
+<br />
+
+<table>
+  <tr>
+  <% for column in Resident.content_columns %>
+    <th><%= column.human_name %></th>
+  <% end %>
+  </tr>
+ 
+<% for resident in @residents %>
+  <tr>
+  <% for column in Resident.content_columns %>
+    <!-- Baloi, add something here to identify the field inside "td" -->
+    <td id='resident_<%= resident.id %>_<%= column.name %>'><%=h resident.send(column.name) %></td>
+  <% end %>
+  </tr>
+<% end %>
+</table>
+
+

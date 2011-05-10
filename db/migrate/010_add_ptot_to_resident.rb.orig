@@ -1,0 +1,11 @@
+class AddPtotToResident < ActiveRecord::Migration
+  def self.up
+    add_column :residents, :physical_therapist_id, :integer
+    add_column :residents, :occupational_therapist_id, :integer
+  end
+
+  def self.down
+    remove_column :residents, :physical_therapist_id
+    remove_column :residents, :occupational_therapist_id
+  end
+end
