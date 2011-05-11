@@ -14,6 +14,8 @@ coding:
 ---- later ----
 * transfer all 'views/session/new.rhtml' form elements to views/session/_form.rhtml
   . check via new and 'edit' actions
+* make a spreadsheet gui for entering and editing sessions for each therapist
+  (like PT schedule excel)
 
 
 =====================================================================================
