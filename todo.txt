@@ -1,6 +1,9 @@
+* check if all residents are present and if ONLY ACTIVE ARE SHOWN
+* transfer residents to proper therapists...
+* do evals and enter charges
 coding:
-* show_by_therapist should only show active
-* update residents, set inactive to active-false
+D show_by_therapist should only show active
+D update residents, set inactive to active-false
 
 * figure out the algo for groups lookback period... 
 * group creation...
