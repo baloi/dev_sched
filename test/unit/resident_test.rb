@@ -29,6 +29,16 @@ class ResidentTest < Test::Unit::TestCase
 
   end
 
+  def test_should_have_an_ot
+    resident = Resident.create(:name => "Eastwoo, Cli")    
+    ot = OccupationalTherapist.create(:name => "Jo")
+    resident.occupational_therapist = ot
+    
+    assert_equal true, resident.save
+
+  end
+
+
   ############################
   def test_mocking_a_class_method
     resident = Resident.new

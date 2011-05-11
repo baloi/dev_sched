@@ -15,7 +15,8 @@
                 <b><%= therapist.name %></b>
               </th>
             </tr>
-            <% therapist.residents.each do |resident| %>
+            <!--% therapist.residents.each do |resident| %-->
+            <% therapist.active_residents.each do |resident| %>
             <tr> 
               <td>
                 <table bgcolor="<%= insurance_color(resident)%>">

@@ -1,8 +1,3 @@
-
-* check if all 15 minutes in 5/11 are all in groups
-* check if all in groups are in 15 minutes
-* check if 5/10 and 5/11 have the same residents + more on 5/11
-
 coding:
 * show_by_therapist should only show active
 * update residents, set inactive to active-false
@@ -22,6 +17,9 @@ coding:
 
 
 =====================================================================================
+D check if all 15 minutes in 5/11 are all in groups
+D check if all in groups are in 15 minutes
+D check if 5/10 and 5/11 have the same residents + more on 5/11
 D Remember: work on dev_barn, deployed is ~/barn (dev_barn at home and barn for work and data)
 D change implementation from ~/dev_barn and change data from ~/barn
 D decide on fossil or git, how about pomodoro?
