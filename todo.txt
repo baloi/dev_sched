@@ -1,20 +1,20 @@
-* check if all residents are present and if ONLY ACTIVE ARE SHOWN
-* transfer residents to proper therapists...
-* do evals and enter charges
-coding:
-D show_by_therapist should only show active
-D update residents, set inactive to active-false
-
 * figure out the algo for groups lookback period... 
 * group creation...
 * an easier way to edit sessions
 * make caseload savable in db..
+* study macruby with cocoa
 
 * work on calculating groups (by day depending on insurance)
   - should be able to base decisions on MDS
 * copy a rehab day to the next or from another rehab day
 
+
+coding:
+D show_by_therapist should only show active
+D update residents, set inactive to active-false
+
 ---- later ----
+* spreadsheet scheduling via cocoa
 * transfer all 'views/session/new.rhtml' form elements to views/session/_form.rhtml
   . check via new and 'edit' actions
 * make a spreadsheet gui for entering and editing sessions for each therapist
