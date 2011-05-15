@@ -52,7 +52,7 @@ helpers do
     select_tag
 
 
-  end 
+  end
 
   def resident_list_tag(residents)
     select_tag = 
@@ -88,7 +88,7 @@ get '/baloi/create_conflicting_data' do
   DataBank.create_initial_residents
   DataBank.create_initial_therapists
 
-  rd = RehabDay.new()  
+  rd = RehabDay.new()
   rd.set_day(Day.new(2010, 11, 10))
 
   if rd.save
