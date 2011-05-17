@@ -1,11 +1,15 @@
+* groups pages: 
+  - create, edit and delete as well as add residents...
+* work on calculating groups (by day depending on insurance)
+  - should be able to base decisions on MDS
+
+
 * figure out the algo for groups lookback period... 
 * group creation...
 * an easier way to edit sessions
 * make caseload savable in db..
 * study macruby with cocoa
 
-* work on calculating groups (by day depending on insurance)
-  - should be able to base decisions on MDS
 * copy a rehab day to the next or from another rehab day
 
 
