@@ -1,0 +1,47 @@
+From 97c84f61669fa6d8e0827b334808fae76674ab01 Mon Sep 17 00:00:00 2001
+From: Stephen Bannasch <stephen.bannasch@gmail.com>
+Date: Fri, 21 Aug 2009 12:06:25 -0400
+Subject: [PATCH] fix crash in lib/logger.rb from dependency on svn keywork expansion
+
+This is a problem when building Ruby from source when cloned from
+a git repository such as: git://github.com/rubyspec/matzruby.git.
+
+Without this fix logger.rb:174 throws this error:
+
+  private method `chomp' called for nil:NilClass (NoMethodError)
+
+The problem occurs because line 173 looks something like this in
+the source when checked out with subversion:
+
+  id, name, rev = %w$Id: logger.rb 11708 2007-02-12 23:01:19Z shyouhei $
+
+but it looks like this when checked out with git:
+
+  id, name, rev = %w$Id$
+---
+ lib/logger.rb |    9 +++++++--
+ 1 files changed, 7 insertions(+), 2 deletions(-)
+
+diff --git a/lib/logger.rb b/lib/logger.rb
+index e9ab171..a419466 100644
+--- a/lib/logger.rb
++++ b/lib/logger.rb
+@@ -170,8 +170,13 @@ require 'monitor'
+ 
+ class Logger
+   VERSION = "1.2.6"
+-  id, name, rev = %w$Id$
+-  ProgName = "#{name.chomp(",v")}/#{rev}"
++  svn_Id = "$Id$"
++  if svn_Id.length > 4
++    id, name, rev = %w$Id$
++    ProgName = "#{name.chomp(",v")}/#{rev}"
++  else
++    ProgName = 'logger.rb'
++  end
+ 
+   class Error < RuntimeError; end
+   class ShiftingError < Error; end
+-- 
+1.6.4
+
