@@ -1,4 +1,10 @@
 * tools to use...
+  - Jamis Buck of Rails Core Team, sqlite driver for ruby creator, Capistrano library for deploying ruby
+    uses vim, testunit vs rspec.
+  - vim just rocks for editing text. I don't picture myself programming with relaxed fingers using emacs
+    (I think they are right that you have to be a spider to use emacs)
+    vim is just plain old simple nirvana!
+  
 * groups pages: 
   - create, edit and delete as well as add residents...
 * work on calculating groups (by day depending on insurance)
