@@ -1,4 +1,8 @@
-* test group/add_resident/:gid
+* test group/add_resident/:id with the form contents
+  1 through post 'add_resident', :id => id, :resident => resident_id
+  2 test that view contains :resident and :id (restclient.get 'group/add_resident')
+  3 check if resident is really added to DB 
+D test group/add_resident/:id
 
 
 * fix group_controller_test, group_controller, app/views/group/show.rthml
