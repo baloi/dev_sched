@@ -70,5 +70,9 @@ class Test::Unit::TestCase
 
   end
 
+  def set_rehab_day(rehab_day)
+    @request.session[:rehab_day_id] = rehab_day.id
+  end
   # baloi end
+
 end

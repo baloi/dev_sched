@@ -46,26 +46,8 @@ class SessionControllerTest < Test::Unit::TestCase
     assert assigns(:session).valid?
   end
 
-  def test_should_have_rehab_day_id_set_before_new
-    # rehab_day_id should be set in session variable
-
-    ##rd_id = rehab_days(:one).id
-    ##@request.session[:rehab_day_id] = rd_id
-
-    ##get :new
-
-    #TODO: should redirect to rehab_day choose page...
-    ##assert_response :redirect
-    ##assert_template 'new'
-
-  end
-
-
   def test_new
-    # rehab_day_id should be set in session variable
-    rd_id = rehab_days(:one).id
-
-    @request.session[:rehab_day_id] = rd_id
+    set_rehab_day(rehab_days(:one))
 
     get :new
 
@@ -76,10 +58,8 @@ class SessionControllerTest < Test::Unit::TestCase
   end
 
   def test_should_have_default_date_as_rehab_day_date
-    # rehab_day_id should be set in session variable
-    rd_id = rehab_days(:one).id
-
-    @request.session[:rehab_day_id] = rd_id
+    # rehab_day should be set in session variable
+    set_rehab_day(rehab_days(:one))
 
     get :new
 
@@ -99,7 +79,7 @@ class SessionControllerTest < Test::Unit::TestCase
     time_start = '2011-03-19 10:00:00'
     time_end = '2011-03-19 11:00:00'
 
-    @request.session[:rehab_day_id] = rehab_day.id
+    set_rehab_day(rehab_day)
     post :create, :session => {:time_start => time_start, :time_end => time_end, :type => "PTTreatment"}
 
     assert_response :redirect

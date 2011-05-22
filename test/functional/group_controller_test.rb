@@ -28,10 +28,27 @@ class GroupControllerTest < Test::Unit::TestCase
     assert_template 'list'
   end
 
-  def test_should_be_able_to_add_resident
-    #TODO:
-  end
-
+#  def test_should_be_able_to_add_resident
+#    #TODO:
+#
+#    # there should be GET:add_resident get (for form) POST:add_resident (for actually putting resident
+#
+#    # create group
+#
+#    get :add_resident
+#    assert_response :success
+#    assert_template 'add_resident'
+#
+#    #assert_equal "add", @response.body
+#    # show group and there should be a link for add_resident
+#
+#    post :add_resident, {:id => 2}
+#    #assert_response :success
+#    #assert_template 'add_resident'
+#  
+#    # into actual group 
+#  end
+#
   def test_list
     get :list
 
@@ -54,9 +71,7 @@ class GroupControllerTest < Test::Unit::TestCase
 
   def test_new
     # rehab_day_id should be set in session variable
-    rd_id = rehab_days(:one).id
-
-    @request.session[:rehab_day_id] = rd_id
+    set_rehab_day(rehab_days(:one))
 
     get :new
 
@@ -68,7 +83,6 @@ class GroupControllerTest < Test::Unit::TestCase
 
   def test_create
     # BALOI WORKING ON THIS NOW
-    #   ERROR: Therapist expected, got String
     num_groups = Group.count
 
     rehab_day = RehabDay.find(1)
@@ -76,7 +90,8 @@ class GroupControllerTest < Test::Unit::TestCase
     time_start = '2011-03-19 10:00:00'
     time_end = '2011-03-19 11:00:00'
 
-    @request.session[:rehab_day_id] = rehab_day.id
+    set_rehab_day(rehab_day)
+
     post :create, :group => {:time_start => time_start, :time_end => time_end, :type => "PTGroup"}
 
     assert_response :redirect
@@ -84,6 +99,5 @@ class GroupControllerTest < Test::Unit::TestCase
 
     assert_equal num_groups + 1, Group.count
   end
-
 
 end
