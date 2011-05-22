@@ -28,37 +28,37 @@ class GroupControllerTest < Test::Unit::TestCase
     assert_template 'list'
   end
 
-  def test_should_be_able_to_add_resident
-    #TODO:
+#  def test_should_be_able_to_add_resident
+#    #TODO:
+#    # create group
+#    rehab_day = RehabDay.find(1)
+#    set_rehab_day(rehab_day)
+#
+#    time_start = '2011-03-19 10:00:00'
+#    time_end = '2011-03-19 11:00:00'
+#
+#    create_group :group => {:time_start => time_start, :time_end => time_end, :type => "PTGroup"}
+#
+#    get :add_resident
+#    assert_response :success
+#    assert_template 'add_resident'
+#
+#    #assert_equal "add", @response.body
+#    # show group and there should be a link for add_resident
+#
+#    #TODO: actual data to add resident
+#    post :add_resident, {:id => 2}
+#
+#    assert_response :success
+#    assert_template 'show'
+#  
+#    #TODO: check if response contains resident details in the group
+#    #TODO: check if the group has this resident and this resident only as part
+#    #      of the group
+#
+#    # into actual group 
+#  end
 
-    # create group
-    rehab_day = RehabDay.find(1)
-    set_rehab_day(rehab_day)
-
-    time_start = '2011-03-19 10:00:00'
-    time_end = '2011-03-19 11:00:00'
-
-    create_group :group => {:time_start => time_start, :time_end => time_end, :type => "PTGroup"}
-
-    get :add_resident
-    assert_response :success
-    assert_template 'add_resident'
-
-    #assert_equal "add", @response.body
-    # show group and there should be a link for add_resident
-
-    #TODO: actual data to add resident
-    post :add_resident, {:id => 2}
-
-    assert_response :success
-    assert_template 'show'
-  
-    #TODO: check if response contains resident details in the group
-    #TODO: check if the group has this resident and this resident only as part
-    #      of the group
-
-    # into actual group 
-  end
 
   def test_list
     get :list

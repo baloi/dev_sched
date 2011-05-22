@@ -1,22 +1,21 @@
 <h1>New session</h1>
 
 <% form_tag :action => 'create' do %>
-  <!-- baloi start -->
- <!-- baloi end   -->
   <%= render :partial => 'form' %>
+  <!-- baloi start -->
 
 <p><label for="session_therapist_id">Therapist</label><br/>
 <%= select 'session', 'therapist_id', @therapists  %></p>
-
 
 <p><label for="session_type">Type</label><br/>
 <select id="session_type" name="session[type]">
   <option value="PTTreatment">PT Treatment</option>
   <option value="OTTreatment">OT Treatment</option>
-  <!--option value="PTGroup">PT Group</option-->
-  <!--option value="OTGroup">OT Group</option-->
+  <option value="PTGroup">PT Group</option>
+  <option value="OTGroup">OT Group</option>
 </select>
 </p>
+ <!-- baloi end   -->
 
   <%= submit_tag "Create" %>
 <% end %>

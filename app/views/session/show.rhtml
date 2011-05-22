@@ -1,3 +1,5 @@
+<b><%= @session.type %></b>
+
 <% for column in Session.content_columns %>
 <p>
   <b><%= column.human_name %>:</b> <%=h @session.send(column.name) %>

@@ -1,14 +1,7 @@
-* test group/add_resident/:id with the form contents
-  1 through post 'add_resident', :id => id, :resident => resident_id
-  2 test that view contains :resident and :id (restclient.get 'group/add_resident')
-  3 check if resident is really added to DB 
-D test group/add_resident/:id
-
 
 * fix group_controller_test, group_controller, app/views/group/show.rthml
   - it should be show/:id or show?id=:id
-* groups pages: 
-  - create, edit and delete as well as add residents...
+
 * work on calculating groups (by day depending on insurance)
   - should be able to base decisions on MDS
 
@@ -42,6 +35,15 @@ D update residents, set inactive to active-false
 
 
 =====================================================================================
+ND* test group/add_resident/:id with the form contents
+ND  WILL INSTEAD DO session/add_resident/:id WITH BETTER FUNCTIONALITY
+ND  0 test get group/add_resident/,j
+ND  1 through post 'add_resident', :id => id, :resident => resident_id
+ND  2 test that view contains :resident and :id (restclient.get 'group/add_resident')
+ND  3 check if resident is really added to DB 
+D test group/add_resident/:id
+
+
 D check if all 15 minutes in 5/11 are all in groups
 D check if all in groups are in 15 minutes
 D check if 5/10 and 5/11 have the same residents + more on 5/11
