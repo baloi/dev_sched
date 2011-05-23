@@ -100,4 +100,15 @@ class SessionTest < Test::Unit::TestCase
     s = Session.find(1)
     assert_equal "03:45 PM", s.time_start_hhmm
   end
+
+  def test_is_group
+    pt_tx = PTTreatment.new
+    ot_tx = OTTreatment.new
+    pt_group = PTGroup.new
+    ot_group = OTGroup.new
+    assert_equal false, pt_tx.is_group?
+    assert_equal false, ot_tx.is_group?
+    assert_equal true, pt_group.is_group?
+    assert_equal true, ot_group.is_group?
+  end
 end
