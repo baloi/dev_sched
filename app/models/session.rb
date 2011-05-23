@@ -9,15 +9,21 @@ class Session < ActiveRecord::Base
     session_type = "Group"
     find(:all, :conditions => ["type LIKE ? ", "%#{session_type}%"])
   end
-  def time_to_hhmm(time)
-    time.strftime("%I:%M %p")
+
+  def details
+    str = "#{self.type} by #{self.therapist.name} starts at #{time_end_hhmm}, ending #{time_end_hhmm}"
   end
+
   def time_start_hhmm
     time_to_hhmm(time_start)
   end
 
   def time_end_hhmm
     time_to_hhmm(time_end)
+  end
+
+  def time_to_hhmm(time)
+    time.strftime("%I:%M %p")
   end
 
   # Returns time_start in 'hh:mm p' format

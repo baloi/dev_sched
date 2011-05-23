@@ -94,6 +94,8 @@ class SessionController < ApplicationController
           :conditions => "id = #{resident_id}")
   
       @_session.residents << resident
+      # if session is not a group then check first if it already has residents
+
       redirect_to :action => 'show', :id => sess_id
     end
   end

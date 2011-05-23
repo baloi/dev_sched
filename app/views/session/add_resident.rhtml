@@ -1,7 +1,20 @@
+<b><%= @session.details %></b>
+
 <% for column in Session.content_columns %>
 <p>
   <b><%= column.human_name %>:</b> <%=h @_session.send(column.name) %>
 </p>
+<% end %>
+
+Current Residents: <br />
+<% if @session.residents.count > 0 %>
+  <table>
+  <% @session.residents.each do |resident| %>
+    <tr>
+      <td><%= resident.name %></td>
+  <% end %>
+    <tr>
+  <table>
 <% end %>
 
 

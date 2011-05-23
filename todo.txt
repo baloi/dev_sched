@@ -1,3 +1,6 @@
+* When adding residents, make sure that one one can be added in a regular PT/OT
+  session and up to only four for a group
+* session views should be more informative
 
 * fix group_controller_test, group_controller, app/views/group/show.rthml
   - it should be show/:id or show?id=:id
@@ -9,7 +12,8 @@
 * tools to use...
   - Jamis Buck of Rails Core Team, sqlite driver for ruby creator, Capistrano library for deploying ruby
     uses vim, testunit vs rspec.
-  - vim just rocks for editing text. I don't picture myself programming with relaxed fingers using emacs
+  - vim just rocks for editing text. I don't picture myself programming with relaxed fingers using emacs.
+    If I type with my laptop on my lap, I'd rather be using vim with one finger with the most used keys.
     (I think they are right that you have to be a spider to use emacs)
     vim is just plain old simple nirvana!
   
