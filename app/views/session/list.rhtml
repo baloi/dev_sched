@@ -14,7 +14,7 @@
   <% for column in Session.content_columns %>
     <td><%=h session.send(column.name) %></td>
   <% end %>
-    <td><%= session.type %></td>
+    <td><%= session.class %></td>
     <td><%= session.therapist.name %></td>
 
     <td><%= link_to 'Show', :action => 'show', :id => session %></td>
@@ -24,8 +24,6 @@
 <% end %>
 </table>
 
-<!--%= link_to 'Previous page', { :page => @session_pages.current.previous } if @session_pages.current.previous %-->
-<!--%= link_to 'Next page', { :page => @session_pages.current.next } if @session_pages.current.next %--> 
 
 <br />
 

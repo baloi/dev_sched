@@ -20,7 +20,7 @@ class Session < ActiveRecord::Base
     end
   end
   def details
-    str = "#{self.type} by #{self.therapist.name} starts at #{time_end_hhmm}, ending #{time_end_hhmm}"
+    str = "#{self.class} by #{self.therapist.name} starts at #{time_end_hhmm}, ending #{time_end_hhmm}"
   end
 
   def time_start_hhmm

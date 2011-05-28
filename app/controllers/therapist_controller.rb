@@ -9,7 +9,8 @@ class TherapistController < ApplicationController
          :redirect_to => { :action => :list }
 
   def list
-    @therapist_pages, @therapists = paginate :therapists, :per_page => 10
+    #@therapist_pages, @therapists = paginate :therapists, :per_page => 10
+    @therapists = Therapist.find(:all)
   end
 
   def show

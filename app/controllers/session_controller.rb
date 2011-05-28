@@ -15,7 +15,7 @@ class SessionController < ApplicationController
   end
 
   def show
-    @session = Session.find(params[:id])
+    @a_session = Session.find(params[:id])
   end
 
   def new

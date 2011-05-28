@@ -9,7 +9,7 @@ class ScheduleController < ApplicationController
          :redirect_to => { :action => :list }
 
   def list
-    @schedule_pages, @schedules = paginate :schedules, :per_page => 10
+    @schedules = Schedule.find(:all)
   end
 
   def show
