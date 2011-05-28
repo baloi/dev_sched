@@ -1,4 +1,4 @@
-<b><%= @session.details %></b>
+<b><%= @_session.details %></b>
 
 <% for column in Session.content_columns %>
 <p>
@@ -7,9 +7,9 @@
 <% end %>
 
 Current Residents: <br />
-<% if @session.residents.count > 0 %>
+<% if @_session.residents.count > 0 %>
   <table>
-  <% @session.residents.each do |resident| %>
+  <% @_session.residents.each do |resident| %>
     <tr>
       <td><%= resident.name %></td>
   <% end %>

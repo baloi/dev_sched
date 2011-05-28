@@ -1,17 +1,17 @@
-<b><%= @a_session.details %></b>
+<b><%= @_session.details %></b>
 
 <% for column in Session.content_columns %>
 <p>
-  <b><%= column.human_name %>:</b> <%=h @a_session.send(column.name) %>
+  <b><%= column.human_name %>:</b> <%=h @_session.send(column.name) %>
 </p>
 <% end %>
 
 Residents: <br />
 
-<% if @a_session.residents.count > 0 %>
+<% if @_session.residents.count > 0 %>
   <table>
   
-  <% @a_session.residents.each do |resident| %>
+  <% @_session.residents.each do |resident| %>
     <tr>
       <td><%= resident.name %></td>
 
@@ -22,7 +22,7 @@ Residents: <br />
       </td-->
       <td>
         <%= button_to "Remove", { :action => 'remove_resident',
-                :id => @a_session.id, :resident_id => resident.id },
+                :id => @_session.id, :resident_id => resident.id },
                 :confirm => "Are you sure?", :method => :post %>
       </td>
 
@@ -37,7 +37,7 @@ Residents: <br />
 <br />
 <br />
 
-<%= link_to 'Add Resident', :action => "add_resident", :id => @a_session.id %><br />
+<%= link_to 'Add Resident', :action => "add_resident", :id => @_session.id %><br />
 
-<%= link_to 'Edit', :action => 'edit', :id => @a_session %> |
+<%= link_to 'Edit', :action => 'edit', :id => @_session %> |
 <%= link_to 'Back', :action => 'list' %>

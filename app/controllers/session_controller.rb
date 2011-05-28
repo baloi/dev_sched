@@ -15,11 +15,11 @@ class SessionController < ApplicationController
   end
 
   def show
-    @a_session = Session.find(params[:id])
+    @_session = Session.find(params[:id])
   end
 
   def new
-    @session = Session.new
+    @_session = Session.new
     # baloi start
     @rehab_days = RehabDay.find(:all)
     @rehab_days_array = @rehab_days.map {|rehab_day| 
@@ -29,8 +29,8 @@ class SessionController < ApplicationController
     cur_rehab_day = RehabDay.find(rd_id.to_i)
     cur_rehab_day_time = cur_rehab_day.to_time
    
-    @session.time_start = cur_rehab_day_time 
-    @session.time_end = cur_rehab_day_time 
+    @_session.time_start = cur_rehab_day_time 
+    @_session.time_end = cur_rehab_day_time 
 
     @therapists = Therapist.find(:all).map {|t| [t.name, t.id] }
 
@@ -43,11 +43,11 @@ class SessionController < ApplicationController
 
     # baloi start
     #puts "type = >>#{params[:session][:type]}<<<"
-    @session = create_class_from_params(params[:session][:type], params[:session])
-    @session.rehab_day_id = request.session[:rehab_day_id]
+    @_session = create_class_from_params(params[:session][:type], params[:session])
+    @_session.rehab_day_id = request.session[:rehab_day_id]
     #@session.therapist_id = therapist
     # baloi end
-    if @session.save
+    if @_session.save
       flash[:notice] = 'Session was successfully created.'
       redirect_to :action => 'list'
     else
@@ -56,7 +56,7 @@ class SessionController < ApplicationController
   end
 
   def edit
-    @session = Session.find(params[:id])
+    @_session = Session.find(params[:id])
   end
 
   def update

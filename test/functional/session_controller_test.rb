@@ -43,7 +43,7 @@ class SessionControllerTest < Test::Unit::TestCase
     assert_template 'show'
 
     assert_not_nil assigns(:session)
-    #assert assigns(:session).valid?
+    assert assigns(:session).valid?
   end
 
   def test_new
@@ -54,7 +54,7 @@ class SessionControllerTest < Test::Unit::TestCase
     assert_response :success
     assert_template 'new'
 
-    #assert_not_nil assigns(:session)
+    assert_not_nil assigns(:session)
   end
 
   def test_should_have_default_date_as_rehab_day_date
