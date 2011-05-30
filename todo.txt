@@ -1,3 +1,5 @@
+* build AWS on top of scheduling system
+
 * When adding residents, make sure that one one can be added in a regular PT/OT
   session and up to only four for a group
 * session views should be more informative
