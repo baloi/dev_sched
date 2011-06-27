@@ -1,3 +1,6 @@
+* build a java xml client for the application
+* implement xml request/response for some controllers
+* implement authentication 'logged_in?' and write in controllers
 * build AWS on top of scheduling system
 
 * When adding residents, make sure that one one can be added in a regular PT/OT
