@@ -28,3 +28,6 @@
       fossil update
   
    to use go to ~/barn
+
+> set git configurations
+  git config --global core.editor "vim"
