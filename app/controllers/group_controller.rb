@@ -41,7 +41,7 @@ class GroupController < ApplicationController
 
     # baloi start
     #puts "type = >>#{params[:group][:type]}<<<"
-    @group = create_class_from_params(params[:group][:type], params[:group])
+    @group = create_therapist_from_params(params[:group][:type], params[:group])
     @group.rehab_day_id = session[:rehab_day_id]
     # baloi end
     if @group.save

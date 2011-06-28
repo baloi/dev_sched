@@ -43,7 +43,7 @@ class SessionController < ApplicationController
 
     # baloi start
     #puts "type = >>#{params[:session][:type]}<<<"
-    @_session = create_class_from_params(params[:session][:type], params[:session])
+    @_session = create_therapist_from_params(params[:session][:type], params[:session])
     @_session.rehab_day_id = request.session[:rehab_day_id]
     #@session.therapist_id = therapist
     # baloi end

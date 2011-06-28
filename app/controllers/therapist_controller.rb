@@ -24,8 +24,8 @@ class TherapistController < ApplicationController
 
   def create
     #@therapist = Therapist.new(params[:therapist])
-    @therapist = create_class_from_params(params[:therapist][:type], params[:therapist])
-
+    @therapist = create_therapist_from_params(params[:therapist][:type], 
+                  params[:therapist])
 
     if @therapist.save
       flash[:notice] = 'Therapist was successfully created.'

@@ -21,7 +21,7 @@ class ScheduleController < ApplicationController
   end
 
   def create
-    @schedule = create_class_from_params(params[:schedule][:type], params[:schedule])
+    @schedule = create_therapist_from_params(params[:schedule][:type], params[:schedule])
 
     #@session.rehab_day_id = session[:rehab_day_id]
 
