@@ -1,5 +1,20 @@
 > install specific gem version:
   $ gem install rails -v 1.2.6
+> rake rails:freeze:gems problem
+  1. Gemrunner problem, edit 
+    ~/.rvm/gems/ruby{version}/gems/rails-1.2.6/lib/tasks/framework.rake
+  
+    require 'rubygems'
+    #Gem.manage_gems
+    require 'rubygems/gem_runner'
+  2. version update problem when "rake rails:freeze:gems"
+    $ gem install rubygems-update -v 1.4.2
+    $ gem uninstall rubygems-update -v {newer_version_like_1.5.0}
+    $ update_rubygems
+  3. run:
+    $ rm -drf vendor/rails
+    $ rake rails:freeze:gems 
+
 > install rake task for automatically generating a gems file from your
   Rails gem dependencies. Rerun the rake task whenever you change your
   dependencies.
