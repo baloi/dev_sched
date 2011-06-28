@@ -1,3 +1,6 @@
+* make this run in debian (now running in mac)
+  - install gems
+
 * build a java xml client for the application
 * implement xml request/response for some controllers
 * implement authentication 'logged_in?' and write in controllers
