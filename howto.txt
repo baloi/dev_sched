@@ -15,14 +15,6 @@
     $ rm -drf vendor/rails
     $ rake rails:freeze:gems 
 
-> install rake task for automatically generating a gems file from your
-  Rails gem dependencies. Rerun the rake task whenever you change your
-  dependencies.
-  $ curl https://gist.github.com/101101.txt > lib/tasks/heroku.rake
-  $ rake heroku:gems
-  $ git add lib/tasks/heroku.rake .gems 
-  $ git commit lib/tasks/heroku.rake .gems -m 
-    "Adding gem manifest for Heroku."
 > Heroku
   gem install heroku
   heroku keys:add
