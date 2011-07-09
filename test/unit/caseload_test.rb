@@ -6,8 +6,8 @@ class CaseloadTest < Test::Unit::TestCase
   fixtures :therapists
 
   # Replace this with your real tests.
-  def test_truth
-    assert true
+  def test_find_sessions_by_day_and_therapist
+
   end
 
   def test_associations
@@ -19,7 +19,6 @@ class CaseloadTest < Test::Unit::TestCase
 
     # each caseload should have sessions
     # each session should belong to only one caseload
-
     
   end
 
@@ -31,7 +30,8 @@ class CaseloadTest < Test::Unit::TestCase
     
     rehab_day_id = 1
     therapist_id = 1
-    caseload = Caseload.new(rehab_day_id, therapist_id)
+    caseload = Caseload.new(
+                rehab_day_id, therapist_id)
     
     
     assert_equal 5, caseload.sessions.length
@@ -40,7 +40,8 @@ class CaseloadTest < Test::Unit::TestCase
   def test_should_have_time_array
     rehab_day_id = 1
     therapist_id = 1
-    caseload = Caseload.new(rehab_day_id, therapist_id)
+    caseload = Caseload.new(
+                rehab_day_id, therapist_id)
  
     assert_equal "08:00 AM", caseload.time_array[0] 
 
@@ -59,7 +60,8 @@ class CaseloadTest < Test::Unit::TestCase
   def test_should_have_time_entries
     rehab_day_id = 1
     therapist_id = 1
-    caseload = Caseload.new(rehab_day_id, therapist_id)
+    caseload = Caseload.new(
+                  rehab_day_id, therapist_id)
  
     assert_equal 0, caseload.time_entries["08:00 AM"].length
 
@@ -72,7 +74,8 @@ class CaseloadTest < Test::Unit::TestCase
   def test_to_html
     rehab_day_id = 1
     therapist_id = 1
-    caseload = Caseload.new(rehab_day_id, therapist_id)
+    caseload = Caseload.new(
+                  rehab_day_id, therapist_id)
   
     caseload.to_html
   end

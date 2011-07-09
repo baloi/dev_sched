@@ -3,7 +3,9 @@ class Caseload
 
   def initialize(rehab_day_id, therapist_id)
     # create the @sessions array
-    find_sessions_by_day_and_therapist(rehab_day_id, therapist_id) 
+    @sessions = find_sessions_by_day_and_therapist(
+                  rehab_day_id, 
+                  therapist_id) 
 
     # create @time_array for times (8:00AM, 8:15AM, ...)
     create_time_array 
@@ -32,8 +34,17 @@ class Caseload
   end
 
   def find_sessions_by_day_and_therapist(rehab_day_id, therapist_id)
-      @sessions = Session.find(:all, :conditions => 
-          ["therapist_id = #{therapist_id} AND rehab_day_id = #{rehab_day_id}"])
+
+      sessions = Session.find(
+        :all, 
+        :conditions => 
+          [
+            "therapist_id = ? AND rehab_day_id = ?", therapist_id, 
+            rehab_day_id
+          ]
+      )
+
+      sessions
   end
 
   def create_time_array
