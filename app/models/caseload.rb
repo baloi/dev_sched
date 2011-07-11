@@ -38,8 +38,7 @@ class Caseload
       sessions = Session.find(
         :all, 
         :conditions => 
-          [
-            "therapist_id = ? AND rehab_day_id = ?", therapist_id, 
+          ["therapist_id = ? AND rehab_day_id = ?", therapist_id, 
             rehab_day_id
           ]
       )

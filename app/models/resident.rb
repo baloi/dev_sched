@@ -19,7 +19,8 @@ class Resident < ActiveRecord::Base
   end
 
   def self.sort_by_insurance
-    find(:all, :order => 'pt_minutes_per_day DESC, pt_days_per_week DESC, insurance')
+    find(:all, 
+      :order => 'pt_minutes_per_day DESC, pt_days_per_week DESC, insurance')
   end
 
   def self.for_saturday

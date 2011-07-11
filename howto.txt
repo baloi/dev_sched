@@ -1,3 +1,26 @@
+> running rcov (report of code coverage):
+  $ rcov test/functional/*.rb test/unit/*.rb --output=public/rcov --rails
+    # now you can find your coverage reports in public/rcov/index.html
+
+> runing autotest
+
+  $ autoest -rails
+
+> open three terminal tabs
+  ~/dev_barn, ~/barn, midnight-runner
+
+> to develop go to ~/dev_barn:
+    . git commit, fossil commit
+  then go to ~/barn
+    . always end day with 
+      cd ~/barn 
+      fossil update
+  
+   to use go to ~/barn
+
+> set git configurations
+  git config --global core.editor "vim"
+
 > install specific gem version:
   $ gem install rails -v 1.2.6
 > rake rails:freeze:gems problem
@@ -20,21 +43,4 @@
   heroku keys:add
   heroku create
 
-> runing autotest
 
-  $ autoest -rails
-
-> open three terminal tabs
-  ~/dev_barn, ~/barn, midnight-runner
-
-> to develop go to ~/dev_barn:
-    . git commit, fossil commit
-  then go to ~/barn
-    . always end day with 
-      cd ~/barn 
-      fossil update
-  
-   to use go to ~/barn
-
-> set git configurations
-  git config --global core.editor "vim"
