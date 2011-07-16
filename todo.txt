@@ -1,67 +1,54 @@
------ WEBFORMS branch start -----
+Sat Jul 16 19:44:17 EDT 2011
+> make caseload savable in db..
+> create caseload Model
+> migrate Session to have no Therapist or RehabDay (should be placed in Caseload)
+
 * show a  list of models in a table with html input fields
-
 * make the fields editable with the models as you update or press a "submit" button
------  WEBFORMS branch end  -----
+* copy a rehab day to the next or from another rehab day
 
-* make this run in debian (now running in mac)
-  - install gems
+L implement authentication 'logged_in?' and write in controllers
+L Caseload#to_html
+L Faster entry of sessions/group
+L Display groups only
+L Display only caseloads without groups
 
-* build a java xml client for the application
-* implement xml request/response for some controllers
-* implement authentication 'logged_in?' and write in controllers
-* build AWS on top of scheduling system
 
-* When adding residents, make sure that one one can be added in a regular PT/OT
-  session and up to only four for a group
-* session views should be more informative
-
-* fix group_controller_test, group_controller, app/views/group/show.rthml
-  - it should be show/:id or show?id=:id
-
-* work on calculating groups (by day depending on insurance)
+L work on calculating groups (by day depending on insurance)
   - should be able to base decisions on MDS
+  - figure out the algo for groups lookback period... 
+L spreadsheet scheduling via Smalltalk or JRuby
+L make a spreadsheet gui for entering and editing sessions for each therapist
+  (like PT schedule excel)
 
+L When adding residents, make sure that one one can be added in a regular PT/OT
+  session and up to only four for a group
+L session views should be more informative
 
 * tools to use...
-  - Jamis Buck of Rails Core Team, sqlite driver for ruby creator, Capistrano library for deploying ruby
-    uses vim, testunit vs rspec.
-  - vim just rocks for editing text. I don't picture myself programming with relaxed fingers using emacs.
-    If I type with my laptop on my lap, I'd rather be using vim with one finger with the most used keys.
+  - Jamis Buck of Rails Core Team, sqlite driver for ruby creator, Capistrano 
+    library for deploying ruby uses vim, testunit vs rspec.
+  - vim just rocks for editing text. I don't picture myself programming with 
+    relaxed fingers using emacs.
+    If I type with my laptop on my lap, I'd rather be using vim with one finger
+    with the most used keys.
     (I think they are right that you have to be a spider to use emacs)
     vim is just plain old simple nirvana!
   
-* figure out the algo for groups lookback period... 
-* group creation...
-* an easier way to edit sessions
-* make caseload savable in db..
-* study macruby with cocoa
-
-* copy a rehab day to the next or from another rehab day
-
-
-coding:
-D show_by_therapist should only show active
-D update residents, set inactive to active-false
-
----- later ----
-* spreadsheet scheduling via cocoa
-* transfer all 'views/session/new.rhtml' form elements to views/session/_form.rhtml
-  . check via new and 'edit' actions
-* make a spreadsheet gui for entering and editing sessions for each therapist
-  (like PT schedule excel)
-
-
 =====================================================================================
+ND study macruby with cocoa
 ND* test group/add_resident/:id with the form contents
 ND  WILL INSTEAD DO session/add_resident/:id WITH BETTER FUNCTIONALITY
 ND  0 test get group/add_resident/,j
 ND  1 through post 'add_resident', :id => id, :resident => resident_id
 ND  2 test that view contains :resident and :id (restclient.get 'group/add_resident')
 ND  3 check if resident is really added to DB 
+
+D show_by_therapist should only show active
+D update residents, set inactive to active-false
+D make this run in debian (now running in mac)
+  - install gems
 D test group/add_resident/:id
-
-
 D check if all 15 minutes in 5/11 are all in groups
 D check if all in groups are in 15 minutes
 D check if 5/10 and 5/11 have the same residents + more on 5/11
@@ -81,8 +68,6 @@ D make test for resident.physical_therapist/occupational_therapist
                                                 >>> Can these two be joined?
   - OccupationalTherapist has_many residents --
 
-
-
 D How do we destroy a therapist from Resident.therapists??
   D 1. copy therapist_id from TherapistResidents to Resident.pt
      - loop through therapist_residents
@@ -99,41 +84,21 @@ D How do we destroy a therapist from Resident.therapists??
   >>>> MAKE TESTS FOR EVERY STEP 
 * Resident.edit should show actual therapist and edit it also
 
-
 D show the actual current insurance in resident/edit.rhtml ..
 D finish hwang play-by-play screencast
 D(Sun May  1 00:59:18 EDT 2011) display residents by therapist..
-N Session#has_conflict/overlaps
-L Test session conflicts
+X Session#has_conflict/overlaps
+X Test session conflicts
   . conflicts by resident
   . conflicts by therapist
-L Highlight conflicts
+X Highlight conflicts
 
-L make Capybara work on your old rails
-L Caseload#to_html
-L Faster entry of sessions/group
-L Display groups only
-L Display only caseloads without groups
-
+X make Capybara work on your old rails
 
 D(Wed Apr 27 20:11:24 EDT 2011) new resident should have a therapist, try ResidentTherapist approach* enter all residents
 D (Tue Apr 26 18:37:57 EDT 2011) clean up database
 D (Mon Apr 25 20:05:28 EDT 2011) Add eval_date to resident model 
 D (Mon Apr 25 20:05:00 EDT 2011) Enter first-lastname, insurance type
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 > Caseload
