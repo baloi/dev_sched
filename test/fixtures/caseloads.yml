@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+one:
+  id: 1
+  rehab_day_id: 1
+  therapist_id: 1
+  hours: 1
+two:
+  id: 2
+  rehab_day_id: 1
+  therapist_id: 1
+  hours: 1
