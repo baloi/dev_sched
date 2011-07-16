@@ -101,6 +101,13 @@ class SessionTest < Test::Unit::TestCase
     assert_equal "03:45 PM", s.time_start_hhmm
   end
 
+  def test_duration
+    #s = PTTreatment.sample
+    s = Session.find(1)
+  
+    #d = 
+  end
+
   def test_is_group
     pt_tx = PTTreatment.new
     ot_tx = OTTreatment.new
