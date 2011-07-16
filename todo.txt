@@ -1,3 +1,9 @@
+----- WEBFORMS branch start -----
+* show a  list of models in a table with html input fields
+
+* make the fields editable with the models as you update or press a "submit" button
+-----  WEBFORMS branch end  -----
+
 * make this run in debian (now running in mac)
   - install gems
 
