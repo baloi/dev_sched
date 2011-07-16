@@ -1,0 +1,1 @@
+ rcov test/functional/*.rb test/unit/*.rb --output=public/rcov --rails
