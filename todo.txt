@@ -1,6 +1,11 @@
 Sat Jul 16 19:44:17 EDT 2011
 > make caseload savable in db..
-> create caseload Model
+> Caseload should have sessions
+
+> Caseload should have a therapist
+D Caseload should have a rehab_day Sat Jul 16 20:21:17 EDT 2011
+D create caseload Model
+
 > migrate Session to have no Therapist or RehabDay (should be placed in Caseload)
 
 * show a  list of models in a table with html input fields

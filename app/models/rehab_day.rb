@@ -1,5 +1,6 @@
 class RehabDay < ActiveRecord::Base
   has_many :sessions
+  has_many :caseloads  
 
   def date
     "#{self.year}/#{self.month}/#{self.day_of_month}"
