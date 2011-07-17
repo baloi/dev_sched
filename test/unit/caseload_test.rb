@@ -10,21 +10,25 @@ class CaseloadTest < Test::Unit::TestCase
 
   end
 
-  def test_has_rehab_day
+  def test_should_have_rehab_day
     # each caseload should belong to a rehab day
     day = Day.new(2011, 3, 11)
     rehab_day = RehabDay.new
     rehab_day.set_day day
     #assert_equal rehab_day.date, '2011/3/11'
 
+    caseload = Caseload.create(:rehab_day => rehab_day)
+    caseload_from_db = Caseload.find(caseload.id)
+    assert_equal caseload_from_db.rehab_day.date, rehab_day.date
+  end
+
+  def test_should_have_one_therapist
+    # each caseload should have one therapist
     caseload = Caseload.new
-    caseload.rehab_day = rehab_day 
-    assert_equal caseload.rehab_day.date, rehab_day.date
+    
   end
 #=====================================================
-    # each rehab day should have one to many caseloads
 
-    # each caseload should have one therapist
     # each therapist can have many caseloads but only one for the day
 
     # each caseload should have sessions
@@ -85,4 +89,9 @@ class CaseloadTest < Test::Unit::TestCase
 #  
 #    caseload.to_html
 #  end
+
+  # private helper methods
+  private 
+  
+
 end

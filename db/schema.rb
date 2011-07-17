@@ -2,12 +2,12 @@
 # migrations feature of ActiveRecord to incrementally modify your database, and
 # then regenerate this schema definition.
 
-ActiveRecord::Schema.define(:version => 15) do
+ActiveRecord::Schema.define(:version => 17) do
 
   create_table "caseloads", :force => true do |t|
     t.column "rehab_day_id", :integer
     t.column "therapist_id", :integer
-    t.column "hours",        :integer
+    t.column "hours",        :decimal, :precision => 8, :scale => 2
   end
 
   create_table "conflicts", :force => true do |t|
